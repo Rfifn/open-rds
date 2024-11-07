@@ -13,7 +13,7 @@
     "env": {
         "APP_ENV": "production",
         "APP_DEBUG": "true",
-        "APP_URL": "https://your.url.from.vercel.app",
+        "APP_URL": "https://open-rds-iya.vercel.app",
         "APP_KEY": "base64:eHg5UAwPj/HQkBg5eMFjUzRa3iwEVPZJXJhHKrBR5nQ=",
 
         "APP_CONFIG_CACHE": "/tmp/config.php",
