@@ -10,9 +10,7 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
-
-    <!-- Scripts -->
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @vite('resources/css/app.css')
 </head>
 <body class="bg-[#f0f0f0] overflow-x-hidden overflow-y-hidden flex items-center justify-center max-h-screen">
     <img src="{{ asset('assets/v1.svg') }}" alt="img" class="w-[700px] h-[400px] absolute left-0 bottom-0">

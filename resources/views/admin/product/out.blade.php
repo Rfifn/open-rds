@@ -176,7 +176,7 @@
                                 
                 </div>
                 <div>
-                    <input type="date" name="dateout" class="form-control" placeholder="Date Out" name="date_out">{{$products->date_out}}</input>
+                    <input type="date" name="dateout" class="border border-gray-300 rounded p-2 w-[290px]" placeholder="Date Out" name="date_out">{{$products->date_out}}</input>
                     @error('status')
                                 <span class="text-red-700">{{$message}}</span>
                                 @enderror
