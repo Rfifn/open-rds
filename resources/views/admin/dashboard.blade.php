@@ -110,7 +110,7 @@
 
     <div class="absolute top-[187px] left-[357px] text-xl text-[rgb(58,58,58)] font-medium">
         <p>Selamat Datang 👋</p>
-        <p class="text-3xl text-[rgb(18,18,18)] mt-[10px]">Admin !</p>
+        <p class="text-3xl text-[rgb(18,18,18)] mt-[10px]">{{ Auth::user()->name }} !</p>
 
     </div>
 

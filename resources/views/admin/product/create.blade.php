@@ -181,7 +181,7 @@
             
             <div class="flex space-x-[30px] mt-4">
                 <button type="submit" class="bg-blue-800 text-white rounded px-4 py-2 w-[290px] h-[45px]">Tambahkan ke Gudang</button>
-                <button type="reset" class="text-gray-700 rounded px-4 py-2 w-[290px] h-[45px] border border-black">Cancel</button>
+                <button hr type="reset" class="text-gray-700 rounded px-4 py-2 w-[290px] h-[45px] border border-black"><a href="{{ route('admin/products') }}">Batalkan</a>
                 
             </div>
         </form>

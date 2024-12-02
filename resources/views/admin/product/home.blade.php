@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     <link rel="stylesheet" href="output.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     @vite('resources/css/app.css')
     <link href="https://fonts.googleapis.com/css2?    family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 </head>
@@ -110,66 +111,92 @@
     </div>
     
     {{-- Isi Konten --}}
-    <h1 class="absolute left-[360px] top-[188px] font-bold text-[24px] text-gray-800">Barang Gudang</h1>
-    <p class="absolute left-[360px] top-[188px] text-[16px] mt-[36px]">Masuk ke dalam Gudang 🚚</p>
+    <h1 class="absolute left-[310px] top-[160px] font-bold text-[24px] text-gray-800">Barang Gudang</h1>
+    <p class="absolute left-[310px] top-[164px] text-[16px] mt-[36px] text-black">Masuk ke dalam Gudang 🚚</p>
 
     <form method="GET" action="{{ route('admin/products') }}" class="mb-4">
         <div class="form-group">
             <input 
-                type="search" name="search" id="search" placeholder="Search by Merk or Seri" value="{{ request('search') }}" class="absolute left-[360px] top-[280px] w-[366px] h-[52px] py-[10px] px-[30px] border-none shadow rounded-full form-control"
+                type="search" name="search" id="search" placeholder="Cari merk atau seri" value="{{ request('search') }}" class="absolute left-[310px] top-[280px] w-[366px] h-[52px] py-[10px] px-[30px] border-none shadow rounded-[6px] form-control"
             >
         </div>
         
-        <button type="submit" class="absolute text-white rounded-full bg-blue-800 font-thin top-[280px] left-[737px] w-[50px] h-[50px] flex items-center justify-center hover:bg-blue-900 transition duration-200">
+        <button type="submit" class="absolute text-white rounded-[6px] bg-blue-800 font-thin top-[280px] left-[686px] w-[50px] h-[50px] flex items-center justify-center hover:bg-blue-900 transition duration-200">
             <img src="{{ asset('assets/cari.svg') }}" alt="Cari" class="w-6 h-6" />
         </button>
         
     </form>
 
-    <button class="absolute text-white rounded-[30px] bg-blue-800 font-normal top-[280px] left-[1200px] w-[170px] h-[50px] hover:bg-blue-900 transition duration-200 flex items-center justify-center space-x-2">
+    <button class="absolute text-white rounded-[6px] bg-blue-800 font-normal top-[280px] left-[1320px] w-[170px] h-[50px] hover:bg-blue-900 transition duration-200 flex items-center justify-center space-x-2">
         <img src="{{ asset('assets/plus.svg') }}" alt="Tambah" class="w-5 h-5" />
         <a href="{{ route('admin/products/create') }}">Tambah Barang</a>
     </button>
     
 
-    <table class="w-[1180px] table-fixed absolute top-[360px] left-[310px] bg-white rounded-[16px] border border-gray-300 overflow-x-hidden overflow-y-hidden" style="border-collapse: separate; border-spacing: 0; border-radius: 8px;">
+    <table class="w-[1180px] table-fixed absolute top-[360px] left-[310px] bg-white border border-gray-300 overflow-x-hidden overflow-y-hidden" style="border-collapse: separate; border-spacing: 0; border-radius: 4px;">
         <thead>
             <tr>
-                <th class="border-b text-left pl-[20px] border-black pt-[16px] pr-[10px] pb-[20px] font-medium">Nama Merk</th>
-                <th class="border-b text-left pl-[20px] border-black pt-[16px] pr-[10px] pb-[20px] font-medium">Spesifikasi</th>
-                <th class="border-b text-left pl-[20px] border-black pt-[16px] pr-[10px] pb-[20px] font-medium">Lokasi</th>
-                <th class="border-b text-left pl-[20px] border-black pt-[16px] pr-[10px] pb-[20px] font-medium">No. Seri</th>
-                <th class="border-b text-left pl-[20px] border-black pt-[16px] pr-[10px] pb-[20px] font-medium">Keterangan</th>
-                <th class="border-b text-left pl-[20px] border-black pt-[16px] pr-[10px] pb-[20px] font-medium">Perbarui</th>
-                <th class="border-b text-left pl-[20px] border-black pt-[16px] pr-[10px] pb-[20px] font-medium">Keluar</th>
-                <th class="border-b text-left pl-[20px] border-black pt-[16px] pr-[10px] pb-[20px] font-medium">Status</th>
-                <th class="border-b text-left pl-[20px] border-black pt-[16px] pr-[10px] pb-[20px] font-medium">Lainnya</th>
+                <th class="border-b text-left pl-[20px] border-black pt-[16px] pr-[10px] pb-[16px] font-medium bg-gray-200">Nama Merk</th>
+                <th class="border-b text-left pl-[20px] border-black pt-[16px] pr-[10px] pb-[16px] font-medium bg-gray-200">Spesifikasi</th>
+                <th class="border-b text-left pl-[20px] border-black pt-[16px] pr-[10px] pb-[16px] font-medium bg-gray-200">Lokasi</th>
+                <th class="border-b text-left pl-[20px] border-black pt-[16px] pr-[10px] pb-[16px] font-medium bg-gray-200">No. Seri</th>
+                <th class="border-b text-left pl-[20px] border-black pt-[16px] pr-[10px] pb-[16px] font-medium bg-gray-200">Keterangan</th>
+                <th class="border-b text-left pl-[20px] border-black pt-[16px] pr-[10px] pb-[16px] font-medium bg-gray-200">Perbarui</th>
+                <th class="border-b text-left pl-[20px] border-black pt-[16px] pr-[10px] pb-[16px] font-medium bg-gray-200">Keluar</th>
+                <th class="border-b text-left pl-[20px] border-black pt-[16px] pr-[10px] pb-[16px] font-medium bg-gray-200">Status</th>
+                <th class="border-b text-left pl-[20px] border-black pt-[16px] pr-[10px] pb-[16px] font-medium bg-gray-200">Lainnya</th>
             </tr>
         </thead>
         <tbody>
             @foreach ( $products as $product )
-            <tr style="background-color: rgba(4, 198, 0, 0.24)">
-                <td class="pl-[20px] pr-[10px] pb-[30px] pt-[8px]">{{ $product->merk }}</td>
-                <td class="pl-[20px] pr-[10px] pb-[30px] pt-[8px]">{{ $product->spek }}</td>
-                <td class="pl-[20px] pr-[10px] pb-[30px] pt-[8px]">{{ $product->lokasi }}</td>
-                <td class="pl-[20px] pr-[10px] pb-[30px] pt-[8px]">{{ $product->seri }}</td>
-                <td class="pl-[20px] pr-[10px] pb-[30px] pt-[8px]">{{ $product->keterangan }}</td>
-                <td class="pl-[20px] pr-[10px] pb-[30px] pt-[8px]">{{ $product->created_at}}</td>
-                <td class="pl-[20px] pr-[10px] pb-[30px] pt-[8px]">{{ $product->date_out}}</td>
-                <td class="pl-[20px] pr-[10px] pb-[30px] pt-[8px]">{{ $product->status }}</td>
-                <td class="pl-[20px] pb-[30px]">
-                    <button class="p-2 bg-blue-500 text-white rounded hover:bg-blue-600"><a href="{{ route('admin/products/edit', ['id'=>$product->id]) }}">
-                        <img src="{{ asset('assets/edit.svg') }}" alt="Edit" class="w-4 h-4" />
-                    </a>
-                    </button>
-                    <button class="p-2 bg-red-500 text-white rounded hover:bg-red-600"><a href="{{ route('admin/products/delete', ['id'=>$product->id]) }}">
-                        <img src="{{ asset('assets/delete.svg') }}" alt="Edit" class="w-4 h-4" />
-                    </a>
-                    </button>
-                    <button class="p-2 bg-yellow-500 text-white rounded hover:bg-yellow-600"><a href="{{ route('admin/products/edit/out', ['id'=>$product->id]) }}">
-                        <img src="{{ asset('assets/outedit.svg') }}" alt="Edit" class="w-4 h-4" />
-                    </a>
-                    </button>
+            <tr style="">
+                <td class="pl-[20px] pr-[10px] pb-[16px] pt-[16px] border-b border-gray-400 text-xs">{{ $product->merk }}</td>
+                <td class="pl-[20px] pr-[10px] pb-[16px] pt-[16px] border-b border-gray-400 text-xs">{{ $product->spek }}</td>
+                <td class="pl-[20px] pr-[10px] pb-[16px] pt-[16px] border-b border-gray-400 text-xs">{{ $product->lokasi }}</td>
+                <td class="pl-[20px] pr-[10px] pb-[16px] pt-[16px] border-b border-gray-400 text-xs">{{ $product->seri }}</td>
+                <td class="pl-[20px] pr-[10px] pb-[16px] pt-[16px] border-b border-gray-400 text-xs">{{ $product->keterangan }}</td>
+                <td class="pl-[20px] pr-[10px] pb-[16px] pt-[16px] border-b border-gray-400 text-xs">{{ $product->created_at }}</td>
+                <td class="pl-[20px] pr-[10px] pb-[16px] pt-[16px] border-b border-gray-400 text-xs">{{ $product->date_out }}</td>
+                <td class="pl-[20px] pr-[10px] pb-[16px] pt-[16px] border-b border-gray-400 text-xs">{{ $product->status }}</td>
+                <td class="pl-[20px] pb-[30px] border-b border-gray-400 text-xs">
+                    <div x-data="{ isOpen: false, openedWithKeyboard: false }" @keydown.esc.prevent="isOpen = false, openedWithKeyboard = false" class="relative">
+                        <!-- Toggle Button -->
+                        <button type="button" aria-label="context menu" @click="isOpen = ! isOpen" @keydown.space.prevent="openedWithKeyboard = true" @keydown.enter.prevent="openedWithKeyboard = true" @keydown.down.prevent="openedWithKeyboard = true" class="inline-flex cursor-pointer items-center bg-transparent transition hover:opacity-75 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-800 active:opacity-100 dark:focus-visible:outline-neutral-800 pt-8" :class="isOpen || openedWithKeyboard ? 'text-neutral-900 dark:text-white' : 'text-neutral-600 dark:text-neutral-300'" :aria-expanded="isOpen || openedWithKeyboard" aria-haspopup="true">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" fill="#121212" class="w-8 h-8">
+                                <path fill-rule="evenodd" d="M4.5 12a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0zm6 0a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0zm6 0a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0z" clip-rule="evenodd"/>
+                            </svg>
+                        </button>
+                        <!-- Dropdown Menu -->
+                        <div 
+    x-cloak 
+    x-show="isOpen || openedWithKeyboard" 
+    x-transition 
+    x-trap="openedWithKeyboard" 
+    @click.outside="isOpen = false, openedWithKeyboard = false" 
+    class="absolute top-7 right-[8px] pr-[16px] pl-[16px] pt-1 pb-1 flex w-auto rounded-[2px] space-x-4 divide-x divide-gray-300 bg-white border shadow-gray-400 shadow-md" 
+    role="menu">
+                            <!-- Dropdown Items -->
+                            <ul class="flex items-center space-x-2" role="none">
+                                <a href="{{ route('admin/products/edit', ['id'=>$product->id]) }}">
+                                <li class="cursor-pointer p-[1px] rounded-md">
+                                    <img src="{{ asset('assets/edit_bl.svg') }}" alt="first icon" class="w-11 h-11" />
+                                </li>
+                                </a>
+                                <a href="{{ route('admin/products/delete', ['id'=>$product->id]) }}">
+                                <li class="cursor-pointer p-[1px] rounded-md" >
+                                    <img src="{{ asset('assets/delete_bl.svg') }}" alt="second icon" class="w-10 h-10" />
+                                </li>
+                                </a>
+                                <a href="{{ route('admin/products/edit/out', ['id'=>$product->id]) }}">
+                                <li class="cursor-pointer p-[1px] rounded-md">
+                                    <img src="{{ asset('assets/outedit_bl.svg') }}" alt="third icon" class="w-10 h-10" />
+                                </li>
+                                </a>
+                            </ul>
+                            
+                        </div>
+                    </div>
+                    
                 </td>
             </tr>
             @endforeach

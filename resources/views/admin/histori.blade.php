@@ -110,48 +110,28 @@
     </div>
     
     {{-- Isi Konten --}}
-    <h1 class="absolute left-[360px] top-[188px] font-bold text-[24px] text-gray-800">Barang Gudang</h1>
-    <p class="absolute left-[360px] top-[188px] text-[16px] mt-[36px]">Masuk ke dalam Gudang 🚚</p>
+    <h1 class="absolute left-[310px] top-[160px] font-bold text-[24px] text-gray-800">History</h1>
+    <p class="absolute left-[310px] top-[164px] text-[16px] mt-[36px]">RDS Inventory history ⌚</p>
 
-    <form method="GET" action="{{ route('admin/products') }}" class="mb-4">
-        <div class="form-group">
-            <input 
-                type="search" name="search" id="search" placeholder="Search by Merk or Seri" value="{{ request('search') }}" class="absolute left-[360px] top-[280px] w-[366px] h-[52px] py-[10px] px-[30px] border-none shadow rounded-full form-control"
-            >
-        </div>
-        
-        <button type="submit" class="absolute text-white rounded-full bg-blue-800 font-thin top-[280px] left-[737px] w-[50px] h-[50px] flex items-center justify-center hover:bg-blue-900 transition duration-200">
-            <img src="{{ asset('assets/cari.svg') }}" alt="Cari" class="w-6 h-6" />
-        </button>
-        
-    </form>
-
-    <button class="absolute text-white rounded-[30px] bg-blue-800 font-normal top-[280px] left-[1200px] w-[170px] h-[50px] hover:bg-blue-900 transition duration-200 flex items-center justify-center space-x-2">
-        <img src="{{ asset('assets/plus.svg') }}" alt="Tambah" class="w-5 h-5" />
-        <a href="{{ route('admin/products/create') }}">Tambah Barang</a>
-    </button>
     
-
-    <table class="w-[1180px] table-fixed absolute top-[360px] left-[310px] bg-white rounded-[16px] border border-gray-300 overflow-x-hidden overflow-y-hidden" style="border-collapse: separate; border-spacing: 0; border-radius: 8px;">
+    <table class="w-[1180px] table-fixed absolute top-[260px] left-[310px] bg-white rounded-[16px] border border-gray-300 overflow-x-hidden overflow-y-hidden" style="border-collapse: separate; border-spacing: 0; border-radius: 4px;">
         <thead>
             <tr>
-                <th class="border-b-2 text-left pl-[20px] border-green-400 pt-[16px] pb-[20px] font-medium w-[60px]">No.</th>
-                <th class="border-b-2 text-left pl-[20px] border-green-400 pt-[16px] pb-[20px] font-medium">Merk</th>
-                <th class="border-b-2 text-left pl-[20px] border-green-400 pt-[16px] pb-[20px] font-medium">No. Seri</th>
-                <th class="border-b-2 text-left pl-[20px] border-green-400 pt-[16px] pb-[20px] font-medium">Keterangan</th>
-                <th class="border-b-2 text-left pl-[20px] border-green-400 pt-[16px] pb-[20px] font-medium">Terakhir Diperbarui</th>
-                <th class="border-b-2 text-left pl-[20px] border-green-400 pt-[16px] pb-[20px] font-medium">Tipe</th>
+                <th class="border-b-2 text-left pl-[20px] pt-[16px] pb-[20px] font-medium bg-gray-200">Merk</th>
+                <th class="border-b-2 text-left pl-[20px] pt-[16px] pb-[20px] font-medium bg-gray-200">No. Seri</th>
+                <th class="border-b-2 text-left pl-[20px] pt-[16px] pb-[20px] font-medium bg-gray-200">Keterangan</th>
+                <th class="border-b-2 text-left pl-[20px] pt-[16px] pb-[20px] font-medium bg-gray-200">Terakhir Diperbarui</th>
+                <th class="border-b-2 text-left pl-[20px] pt-[16px] pb-[20px] font-medium bg-gray-200">Tipe</th>
             </tr>
         </thead>
         <tbody>
             @foreach ( $histories as $history )
-            <tr style="background-color: rgba(4, 198, 0, 0.24)">
-                <td class="pl-[20px] pr-[10px] pb-[30px] pt-[8px] border-r-2 border-green-400">{{ $loop->iteration }}</td>
+            <tr style="">
                 <td class="pl-[20px] pr-[10px] pb-[30px] pt-[8px]">{{ $history->merk }}</td>
                 <td class="pl-[20px] pr-[10px] pb-[30px] pt-[8px]">{{ $history->seri }}</td>
                 <td class="pl-[20px] pr-[10px] pb-[30px] pt-[8px]">{{ $history->keterangan }}</td>
                 <td class="pl-[20px] pr-[10px] pb-[30px] pt-[8px]">{{ $history->updated_at }}</td>
-                <td class="pl-[20px] pr-[10px] pb-[30px] pt-[8px]">{{ $history->tipe }}</td>
+                <td class="pl-[20px] pr-[10px] pb-[30px] pt-[8px] font-bold">{{ $history->tipe }}</td>
             </tr>
             @endforeach
         </tbody>

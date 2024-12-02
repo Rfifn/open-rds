@@ -112,8 +112,8 @@
         <img src="{{ asset('assets/Logo_RDS.svg') }}" alt="Logo_RDS" class="absolute mt-[20px] ml-[47.5px] w-[74px] h-[44px]">
         <p class="text-2xl absolute ml-[131.5px] mt-[18px]">I</p>
         <p class="text-md absolute ml-[138px] mt-[25px]">NVENTORY</p>
-        <p class="font-bold mt-[94px] ml-[48.5px] text-[24px]">Keluarkan Barang</p>
-        <p class="font-thin mt-[5px] ml-[83.5px] text-[15px]">Keluar dari Gudang</p>
+        <p class="font-bold mt-[94px] ml-[36px] text-[24px]">Keluarkan Barang</p>
+        <p class="font-thin mt-[5px] ml-[78px] text-[15px]">Keluar dari Gudang</p>
         @if (session()->has('error'))
                     <div>
                         {{session('error')}}
@@ -189,7 +189,7 @@
             
             <div class="flex space-x-[30px] mt-4">
                 <button type="submit" class="bg-[#FF6262] text-white rounded px-4 py-2 w-[290px] h-[45px]">Keluarkan barang</button>
-                <button hr type="reset" class="text-gray-700 rounded px-4 py-2 w-[290px] h-[45px] border border-black"><a href="{{ route('admin/products') }}">Go back</a>
+                <button hr type="reset" class="text-gray-700 rounded px-4 py-2 w-[290px] h-[45px] border border-black"><a href="{{ route('admin/products') }}">Batalkan</a>
                 </button>
                 
             </div>
