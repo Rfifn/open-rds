@@ -12,7 +12,7 @@
 <body class="bg-[rgb(230,230,230)] overflow-x-hidden h-screen">
         <header class="bg-white w-screen h-[120px] left-0 top-0 right-0 flex z-10 fixed">
             <div class="flex items-center justify-center pt-[26px] font-normal text-gray-500 pb-[50px] w-[280px] left-0">
-                <img src="{{ asset('assets/Logo_RDS.svg') }}" alt="Logo_RDS" class="w-[74px] h-[44px]">
+                <img src=" " alt="Logo_RDS" class="w-[74px] h-[44px]">
                 <p class="text-2xl -mt-[6px] ml-[6px]">I</p>
                 <p class="text-md tracking-wide">NVENTORY</p> 
             </div>
